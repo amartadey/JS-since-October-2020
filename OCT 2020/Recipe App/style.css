@@ -1,2 +1,28 @@
-* { padding: 0; margin: 0; box-sizing: border-box;font-family: 'Poppins', sans-serif;
+* { padding: 0; margin: 0; box-sizing: border-box;font-family: 'Poppins', sans-serif;  font-size: 12px;}
+img { width: 100%; height: 100%;object-fit: cover;}
+section { 
+    min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 100px 0;
+    background-color:#151618 ; flex-wrap: wrap;
 }
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin :0 auto;
+    padding: 0 15px;;
+}
+.brand { text-align: center; font-size: 4rem;color: whitesmoke; margin-bottom: 30px;}
+form { width: 90%; max-width: 400px; margin: 20px auto;  background-color: rgb(233, 233, 233);border-radius: 5px; line-height: 0;}
+.form-input { width: 90%; background-color: transparent; padding: 6px 12px; min-height: 50px; border:none; outline: none; }
+ion-icon { width: 9%; font-size: 3rem; margin: -12px; color: rgb(75,75,75);}
+
+.search-result { margin-top: 50px; width: 100%; display: grid; grid-gap: 25px; grid-template: auto / repeat(auto-fit, minmax(300px, 1fr)) }
+
+
+.item { width: 100%; border-radius: 8px; background-color: rgb(37,37,37); padding: 15px;}
+.item img { width: 100%; height: auto; border-radius: 4px;}
+
+.item .flex-container { padding-top: 20px;; display: flex; align-items: center; justify-content: space-between;}
+
+.item .title { color: whitesmoke; margin: 0 10px 0 0; font-size: 1.8rem; font-weight: 400;}
+.view-button { text-decoration: none;  text-align: center; width: 130px; padding: 10px 0; display: inline-block; background-color: #424142; color: whitesmoke; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.item-data { color: whitesmoke; margin-top: 20px; font-size: 1.2rem; line-height: 2rem;;}
