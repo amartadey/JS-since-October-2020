@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX 3 - External API</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="script.js" async></script> -->
+</head>
+<body>
+	 <button id="buttongit">Load Github Users</button>
+     <br><br><br>
+     <h1>Github Users</h1>
+     <div id="gitusers" style="display: flex;flex-wrap: wrap;">
+        
+         
+     </div>
+
+     <script>
+        document.getElementById('buttongit').addEventListener('click', loadGitUsers);
+        function loadGitUsers(){
+            
+                var xhrrr = new XMLHttpRequest();
+                xhrrr.open('GET','https://api.github.com/users',true);
+                var output ='';
+                xhrrr.onload = function(){
+                 if(this.status == 200){
+                     var data = JSON.parse(this.responseText);
+                     console.log(data);
+                     for (single in data){
+                        output +=`
+                           <div style="display: flex; padding:0 15px">
+            <div style="max-width: 200px">
+                <img src="${data[single].avatar_url}" style="width:100%; height:auto;" alt="">
+            </div>
+            <h3><a href="${data[single].html_url}" target="_blank">${data[single].login}</a></h3>
+        </div>
+                        `
+                     }
+                 } else {
+                    console.error('error')
+                 }
+                 document.getElementById('gitusers').innerHTML = output;
+                }
+                xhrrr.send();
+        }
+     </script>
+     
+</body>
+</html>
