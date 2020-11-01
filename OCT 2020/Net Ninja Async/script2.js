@@ -2,10 +2,12 @@
 const getTodos= async ()=>{
     const response = await fetch('todos/luigi.json');
     const data = await response.json();
-    console.log(data);
+    return data;
 };
 
-getTodos();
+getTodos().then((data)=>{
+    console.log(data);
+});
 
 
 // fetch('todos/luigi.json').then((response)=>{
